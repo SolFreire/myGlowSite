@@ -850,20 +850,96 @@ button {
 }
 
 /* ---------------------------------------------------------
-   Footer simples
+   Rodapé
    --------------------------------------------------------- */
 .site-footer {
-  text-align: center;
-  color: var(--ink-soft);
-  font-size: 0.8rem;
-  padding: 20px 0 40px;
+  background: #f6f6f6;
+  border-top: 2px solid var(--pink);
+  color: var(--pink);
+  font-family: "Inter", system-ui, sans-serif;
 }
 
-.site-footer a {
+.site-footer__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 52px 48px 36px;
+}
+
+.site-footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-bottom: 72px;
+  border-bottom: 1px solid rgba(255, 41, 155, 0.25);
+}
+
+.site-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-footer__icon {
+  width: 92px;
+  height: auto;
+}
+
+.site-footer__name {
+  display: block;
+  font-family: var(--font-navbar);
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.site-footer__tagline {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 40px;
+  font-size: 1.1rem;
   font-weight: 600;
+}
+
+.site-footer__nav a:hover {
   text-decoration: underline;
 }
 
-.site-footer a:hover {
-  color: var(--pink-dark);
+.site-footer__copy {
+  margin: 28px 0 0;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 720px) {
+  .site-footer__inner {
+    padding: 40px 20px 28px;
+  }
+
+  .site-footer__top {
+    flex-direction: column;
+    padding-bottom: 36px;
+  }
+
+  .site-footer__name {
+    font-size: 2.4rem;
+  }
+
+  .site-footer__nav {
+    justify-content: center;
+    gap: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .site-footer__copy {
+    font-size: 0.95rem;
+  }
 }

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&family=Life+Savers:wght@700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&family=Life+Savers:wght@700;800&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="css/styles.css" />
@@ -38,23 +38,237 @@
       </span>
     </h1>
 
-    <div class="card card--pink sobre-card">
+    <section class="card info-card info-card--about">
       <p>
-        O myGlow é um aplicativo sobre maquiagem como forma de expressão, com o objetivo de ser
-        uma experiência em que o usuário é guiado por personagens de diferentes subculturas —
-        góticas, gyaru e new romantic — enquanto experimenta maquiagens de diferentes estilos e
-        descobre curiosidades sobre elas.
+        O myGlow é um aplicativo sobre maquiagem como forma de expressão, com o objetivo de ser uma
+        experiência onde o usuário é guiado por personagens em um salão virtual para experimentar
+        maquiagens de diferentes subculturas (gótica, gyaru e new romantics), enquanto conhece
+        curiosidades histórias e culturais sobre elas.
       </p>
       <p>
-        Criado por estudantes da Apple Developer Academy de Fortaleza, o aplicativo visa explorar
-        a maquiagem além da estética, mostrando que texturas, pinceladas e cores podem carregar
-        força, cultura e muita história.
+        Criado por estudantes do Apple Developer Academy de Fortaleza, o aplicativo visa explorar a
+        maquiagem além da estética ou da beleza, mostrando que batons, pancakes e rimels podem
+        carregar força, cultura e muita história.
       </p>
-    </div>
+    </section>
+
+    <section class="card info-card info-card--privacy" id="privacidade" aria-labelledby="privacidade-titulo">
+      <h2 class="info-card__title" id="privacidade-titulo">Política de Privacidade</h2>
+
+      <h3>1. Introdução</h3>
+      <p>
+        Bem-vindo(a) ao myGlow. Sua privacidade é importante para nós. Esta Política de Privacidade
+        explica como coletamos, usamos, armazenamos e protegemos suas informações quando você utiliza
+        o aplicativo myGlow, disponível para dispositivos iOS.
+      </p>
+      <p>
+        Ao utilizar o myGlow, você concorda com as práticas descritas nesta política. Recomendamos a
+        leitura completa deste documento antes de usar o aplicativo e, se o myGlow for usado por uma
+        criança ou adolescente, que um responsável leia esta política antes de autorizar o uso.
+      </p>
+
+      <h3>2. Responsável pelo Tratamento dos Dados</h3>
+      <p>
+        O myGlow é desenvolvido e operado de forma independente. Para dúvidas, solicitações ou
+        exercício dos seus direitos relacionados à privacidade, entre em contato pelo e-mail indicado
+        na seção de Contato ao final deste documento.
+      </p>
+
+      <h3>3. Dados que Coletamos</h3>
+      <h4>3.1 Câmera e Fotos</h4>
+      <p>
+        Com a sua permissão expressa, o myGlow acessa a câmera do dispositivo para registrar a foto do
+        visual de maquiagem que você montou no salão. Essa foto é usada para criar a lembrança
+        ("polaroid") do seu visual dentro do app.
+      </p>
+      <p>A foto capturada:</p>
+      <ul>
+        <li>
+          Fica salva dentro do próprio myGlow (na sua galeria de lembranças do aplicativo), junto com
+          a subcultura/trilha a que pertence;
+        </li>
+        <li>
+          Só é salva no rolo da câmera do seu iPhone (Fotos, do sistema) se você optar por exportar
+          ou compartilhar a imagem , essa ação é sempre iniciada por você;
+        </li>
+        <li>
+          Nunca é enviada para servidores externos, nem acessada pelo myGlow fora do momento em que
+          você tira a foto.
+        </li>
+      </ul>
+      <p>
+        O myGlow não acessa sua galeria de fotos existente de forma autônoma, ele só usa a câmera para
+        tirar uma nova foto, com sua permissão.
+      </p>
+
+      <h4>3.2 Dados Gerados no Aplicativo</h4>
+      <p>Durante o uso do myGlow, são gerados e armazenados localmente no seu dispositivo:</p>
+      <ul>
+        <li>Os itens de maquiagem que você guardou na sua maleta;</li>
+        <li>As fotos-lembrança criadas na tela de câmera;</li>
+        <li>O progresso nos tutoriais de cada trilha (etapas concluídas, tutoriais finalizados).</li>
+      </ul>
+
+      <h4>3.3 Dados Técnicos</h4>
+      <p>
+        O myGlow não usa nenhuma ferramenta de analytics, rastreamento de uso ou relatório de falhas
+        de terceiros. Nenhum dado técnico sobre o seu uso do aplicativo é coletado, medido ou enviado
+        para fora do dispositivo.
+      </p>
+
+      <h3>4. Como Utilizamos Seus Dados</h3>
+      <p>Os dados descritos acima são utilizados exclusivamente para:</p>
+      <ul>
+        <li>Exibir a maleta, as lembranças e o progresso que você já salvou dentro do app;</li>
+        <li>Criar e guardar a foto-lembrança do seu visual, quando você usa a câmera;</li>
+        <li>
+          Gerar, quando necessário, sugestões de adaptação de maquiagem através da inteligência
+          artificial no próprio aparelho.
+        </li>
+      </ul>
+      <p>
+        Não utilizamos seus dados para publicidade direcionada, criação de perfis comportamentais ou
+        venda a terceiros.
+      </p>
+
+      <h3>5. Compartilhamento de Dados</h3>
+      <p>O myGlow não vende, aluga ou compartilha seus dados com terceiros. As únicas exceções são:</p>
+      <h4>5.1 Conteúdo Compartilhado por Você</h4>
+      <p>
+        Quando você opta por compartilhar ou salvar uma foto-lembrança pelo menu de compartilhamento
+        do iOS, a imagem é enviada apenas para o destino que você escolher. Essa ação é sempre
+        deliberada e iniciada por você.
+      </p>
+      <h4>5.2 Obrigações Legais</h4>
+      <p>Podemos divulgar informações quando exigido por lei, ordem judicial ou autoridade competente.</p>
+
+      <h3>6. Inteligência Artificial no Dispositivo e Isenção de Responsabilidade</h3>
+      <p>
+        Quando falta algum item na sua maleta durante um tutorial, o myGlow pode sugerir
+        substituições de maquiagem e adaptações técnicas utilizando modelos de inteligência
+        artificial que rodam diretamente no seu dispositivo (Foundation Models / Apple Intelligence).
+      </p>
+      <ul>
+        <li>
+          <strong>Processamento 100% Local:</strong> Todo o processamento ocorre no próprio aparelho,
+          nenhuma informação sobre sua maleta, progresso ou foto é enviada para servidores da Apple
+          ou de terceiros.
+        </li>
+        <li>
+          <strong>Caráter Não Determinístico e Possíveis Erros:</strong> Por utilizarem modelos de
+          linguagem e inteligência artificial generativa (Foundation Models), as sugestões de
+          substituição possuem natureza não determinística e probabilística. Isso significa que as
+          dicas e alternativas geradas podem conter imprecisões, erros ou inconsistências ocasionais.
+          As sugestões possuem caráter meramente informativo e recreativo, cabendo ao usuário avaliar
+          a adequação e a segurança dos produtos na sua pele.
+        </li>
+        <li>
+          <strong>Dispositivos Não Compatíveis:</strong> Se o aparelho não for compatível com esse
+          recurso, o myGlow utiliza um conjunto de dicas estáticas e pré-definidas guardadas no
+          próprio app.
+        </li>
+      </ul>
+
+      <h3>7. Armazenamento e Segurança dos Dados</h3>
+      <p>
+        Os dados do myGlow são armazenados exclusivamente no seu próprio dispositivo, dentro da área
+        protegida do aplicativo (sandbox do iOS):
+      </p>
+      <ul>
+        <li>A maleta, as lembranças e o progresso ficam guardados localmente;</li>
+        <li>As fotos ficam salvas localmente, a menos que você mesmo escolha compartilhá-las;</li>
+        <li>
+          O myGlow não possui servidor próprio nem sincronização remota, não existe nuvem do
+          aplicativo.
+        </li>
+      </ul>
+      <p>Recomendamos manter seu dispositivo atualizado e protegido com senha ou biometria.</p>
+
+      <h3>8. Seus Direitos (LGPD)</h3>
+      <p>
+        Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você (ou o
+        responsável legal) tem direito a:
+      </p>
+      <ul>
+        <li>Confirmação da existência de tratamento e acesso aos dados armazenados localmente;</li>
+        <li>Correção de dados incompletos ou inexatos;</li>
+        <li>
+          Eliminação de dados, que pode ser realizada diretamente apagando o aplicativo, ação que
+          remove permanentemente todos os registros salvos no dispositivo;
+        </li>
+        <li>
+          Revogação do consentimento a qualquer momento (ex: desativando o acesso à câmera em Ajustes
+          &gt; myGlow &gt; Câmera).
+        </li>
+      </ul>
+      <p>Para dúvidas sobre esses direitos, entre em contato pelo e-mail indicado.</p>
+
+      <h3>9. Uso por Menores de Idade e Limitação de Responsabilidade de Idade</h3>
+      <p>
+        O myGlow foi projetado para ser uma experiência segura, educativa e inofensiva, isenta de
+        conteúdos impróprios, compras integradas, anúncios ou rastreamento de dados pessoais.
+      </p>
+      <ul>
+        <li>
+          <strong>Isenção de Controle de Idade:</strong> Por se tratar de um aplicativo de uso
+          inofensivo e que não causa danos à integridade física, psíquica ou financeira dos usuários,
+          o myGlow não realiza a verificação nem se responsabiliza pelo controle de idade dos
+          utilizadores.
+        </li>
+        <li>
+          <strong>Ausência de Cadastros:</strong> Não coletamos nome, e-mail, idade, data de
+          nascimento nem criamos perfis de usuários.
+        </li>
+        <li>
+          <strong>Supervisão Recomendada:</strong> Como o myGlow utiliza a câmera para
+          fotos-lembrança locais, recomendamos que o uso por crianças e adolescentes seja acompanhado
+          por pais ou responsáveis, especialmente ao utilizar a funcionalidade de compartilhamento
+          externo do iOS.
+        </li>
+      </ul>
+
+      <h3>10. Alterações nesta Política</h3>
+      <p>
+        Podemos atualizar esta Política de Privacidade periodicamente. Quando houver mudanças
+        relevantes, notificaremos você por meio de uma atualização no aplicativo ou aviso na App
+        Store. A data de "Última atualização" no topo deste documento reflete a versão mais recente.
+      </p>
+
+      <h3 id="contato">11. Contato</h3>
+      <p>
+        Para dúvidas, solicitações ou exercício dos seus direitos relacionados à privacidade, entre em
+        contato:
+      </p>
+      <ul>
+        <li>E-mail: <a href="mailto:freiresoraia00@gmail.com">freiresoraia00@gmail.com</a></li>
+        <li>Fortaleza, Ceará – Brasil</li>
+      </ul>
+    </section>
   </main>
 
-  <footer class="site-footer">myGlow.com — projeto acadêmico, Apple Developer Academy Fortaleza</footer>
   </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__top">
+        <a href="index.html" class="site-footer__brand">
+          <img class="site-footer__icon" src="assets/img/footer/footer-myglow-icon.svg" alt="" aria-hidden="true" />
+          <span>
+            <span class="site-footer__name">myGlow</span>
+            <span class="site-footer__tagline">Explore subculturas</span>
+          </span>
+        </a>
+        <nav class="site-footer__nav" aria-label="Rodapé">
+          <a href="especialistas.html">Especialistas</a>
+          <a href="desenvolvedores.html">Desenvolvedores</a>
+          <a href="processo.html">Processo</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="#">Contato</a>
+        </nav>
+      </div>
+      <p class="site-footer__copy">© 2026 myGlow. Conheça uma nova subcultura.</p>
+    </div>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
