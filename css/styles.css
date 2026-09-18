@@ -1,0 +1,869 @@
+/* =========================================================
+   myGlow.com — design system
+   Estética scrapbook/colagem: fundo bege, cards coloridos
+   levemente rotacionados, adesivos, molduras polaroid.
+   ========================================================= */
+
+:root {
+  --pink: #ff299b;
+  --pink-dark: #c4106a;
+  --pink-soft: #ffd7ea;
+  --pink-dev: #de4f9b;
+  --pink-active: #ff8fc9;
+  --cream: #d4d0bb;
+  --cream-light: #e3e0d0;
+  --purple: #8a38f5;
+  --purple-dark: #6a3fa0;
+  --blue: #2bb7cd;
+  --blue-dark: #2a6ea8;
+  --yellow: #eab13c;
+  --yellow-dark: #c98f22;
+  --green: #7caa33;
+  --green-dark: #5c8a2c;
+  --ink: #2b2320;
+  --ink-soft: #5a4f47;
+  --link: #505050;
+  --white: #ffffff;
+
+  --font-display: "Fredoka", "Baloo 2", system-ui, sans-serif;
+  --font-body: "Quicksand", system-ui, sans-serif;
+  --font-navbar: "Life Savers", "Fredoka", system-ui, sans-serif;
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 10px;
+  --shadow-card: 0 10px 24px rgba(43, 35, 32, 0.18);
+  --shadow-soft: 0 4px 12px rgba(43, 35, 32, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--cream);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("../assets/img/home/cenario-salao-fundo-do-site.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  margin: 0 0 0.5em;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ---------------------------------------------------------
+   Painel central (textura creme) sobre o cenário do salão
+   --------------------------------------------------------- */
+.page-panel {
+  width: 86%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-image: url("../assets/img/home/patterns-fundo-para-texto.png");
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+
+@media (max-width: 720px) {
+  .page-panel {
+    width: 100%;
+  }
+}
+
+/* ---------------------------------------------------------
+   Navbar
+   --------------------------------------------------------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+  padding: 22px 56px;
+  background: var(--pink);
+  border-radius: 0;
+  border-bottom: 3px solid var(--ink);
+  position: relative;
+  z-index: 10;
+}
+
+.navbar__logo {
+  font-family: var(--font-navbar);
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: var(--white);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.navbar__links a {
+  display: inline-block;
+  font-family: var(--font-navbar);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 10px 26px;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+
+.navbar__links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar__links a.active {
+  background: var(--pink-active);
+  color: var(--white);
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.35);
+}
+
+.navbar__toggle {
+  display: none;
+  background: var(--pink-dark);
+  border: none;
+  color: var(--white);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 880px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 18px 28px;
+  }
+  .navbar__toggle {
+    display: inline-block;
+  }
+  .navbar__links {
+    flex-basis: 100%;
+    justify-content: center;
+    display: none;
+  }
+  .navbar__links.open {
+    display: flex;
+  }
+}
+
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 40px 60px;
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 24px 20px 40px;
+  }
+}
+
+.page-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 10px 20px;
+  margin-bottom: 28px;
+  transform: rotate(-2deg);
+  box-shadow: var(--shadow-soft);
+}
+
+.page-header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.page-header .sticker-star {
+  width: 22px;
+  height: 22px;
+  color: var(--pink);
+}
+
+
+.badge-myglow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--pink);
+  background: var(--white);
+  border: 2px solid var(--pink);
+  border-radius: 999px;
+  padding: 6px 18px;
+}
+
+.sticker-star {
+  display: inline-block;
+  fill: currentColor;
+}
+
+.washi-tape {
+  position: absolute;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.5) 0 6px,
+    rgba(255, 255, 255, 0.15) 6px 12px
+  );
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------------------------------------------------------
+   Placeholders de imagem / vídeo
+   --------------------------------------------------------- */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  border: 3px dashed rgba(43, 35, 32, 0.45);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 18px;
+  min-height: 140px;
+}
+
+.placeholder__icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.placeholder__file {
+  font-family: monospace;
+  font-size: 0.75rem;
+  background: rgba(43, 35, 32, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------------------------------------------------------
+   Cards "scrapbook"
+   --------------------------------------------------------- */
+.card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow-card);
+  padding: 22px;
+  color: var(--white);
+}
+
+.card--purple {
+  background: var(--purple);
+}
+.card--blue {
+  background: var(--blue);
+}
+.card--yellow {
+  background: var(--yellow);
+  color: var(--ink);
+}
+.card--green {
+  background: var(--green);
+}
+.card--pink {
+  background: var(--pink);
+}
+.card--pink-dev {
+  background: var(--pink-dev);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card__social {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.card__social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* aviso de conteúdo ainda provisório */
+.transcription-note {
+  background: var(--white);
+  border: 2px dashed var(--pink);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin-bottom: 28px;
+}
+
+/* ---------------------------------------------------------
+   Video player com fallback
+   --------------------------------------------------------- */
+.video-frame {
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--ink);
+  box-shadow: var(--shadow-card);
+}
+
+.video-frame__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #1d1815;
+}
+
+.video-frame__bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #574d47;
+}
+
+.video-frame video {
+  width: 100%;
+  display: block;
+  background: #000;
+}
+
+.video-frame .placeholder {
+  border: none;
+  border-radius: 0;
+  background: #ffffff10;
+  color: var(--cream-light);
+  min-height: 260px;
+}
+
+/* ---------------------------------------------------------
+   Home
+   --------------------------------------------------------- */
+@media (max-width: 720px) {
+  .character-edna {
+    max-width: 220px;
+  }
+}
+
+.home-hero {
+  margin-bottom: 12px;
+}
+
+.character-edna {
+  width: 26%;
+  min-width: 190px;
+  max-width: 330px;
+}
+
+.speech-bubble {
+  position: relative;
+  width: 100%;
+  margin-bottom: 44px;
+}
+
+.speech-bubble__shape {
+  display: block;
+  width: 100%;
+}
+
+.speech-bubble__text {
+  position: absolute;
+  top: 32%;
+  left: 8%;
+  right: 8%;
+  bottom: 14%;
+  margin: 0;
+  color: var(--ink-soft);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.home-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.paper-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.paper-tag {
+  display: inline-block;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  box-shadow: var(--shadow-soft);
+}
+
+.paper-tag--1 {
+  align-self: flex-start;
+  transform: rotate(-3deg);
+}
+
+.paper-tag--2 {
+  align-self: flex-end;
+  transform: rotate(2deg);
+}
+
+.qr-code {
+  width: 28%;
+  min-width: 150px;
+  max-width: 300px;
+  align-self: flex-start;
+  padding: 10px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.myglow-tag {
+  position: relative;
+  margin-right: 3%;
+}
+
+.myglow-tag__img {
+  display: block;
+  width: 230px;
+}
+
+.pin {
+  position: absolute;
+  width: 42px;
+  height: auto;
+}
+
+.pin--1 {
+  top: -30px;
+  left: -34px;
+}
+
+.pin--2 {
+  bottom: -18px;
+  left: -26px;
+}
+
+.pin--3 {
+  bottom: -26px;
+  right: -26px;
+}
+
+.home-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.trio-group {
+  display: flex;
+  align-items: flex-end;
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.trio-char {
+  width: 34%;
+  min-width: 0;
+}
+
+.trio-char--lucy {
+  margin-right: -5%;
+  transform: rotate(-4deg);
+  z-index: 1;
+}
+
+.trio-char--sana {
+  z-index: 2;
+}
+
+.trio-char--sindy {
+  margin-left: -5%;
+  transform: rotate(4deg);
+  z-index: 1;
+}
+
+@media (max-width: 820px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------
+   Título de seção (tags de papel sobrepostas)
+   --------------------------------------------------------- */
+.section-title {
+  display: block;
+  margin: 0 0 52px;
+  padding-left: 46px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.paper-tag--title {
+  position: relative;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  font-size: 1.8rem;
+  padding: 8px 22px;
+  border-width: 1px;
+  white-space: normal;
+}
+
+.section-title__line1 {
+  transform: rotate(-2deg);
+}
+
+.section-title__line2 {
+  margin: -4px 0 0 44px;
+  transform: rotate(1.5deg);
+}
+
+
+.pin--tl {
+  width: 78px;
+  top: -34px;
+  left: -38px;
+}
+
+.pin--tr {
+  width: 78px;
+  top: -42px;
+  right: -48px;
+}
+
+.pin--bl {
+  width: 72px;
+  bottom: -34px;
+  left: -50px;
+}
+
+.pin--br {
+  width: 82px;
+  bottom: -38px;
+  right: -54px;
+}
+
+@media (max-width: 720px) {
+  .paper-tag--title {
+    font-size: 1.25rem;
+  }
+
+  .pin--tl,
+  .pin--tr,
+  .pin--bl,
+  .pin--br {
+    width: 54px;
+  }
+}
+
+/* 
+   Especialistas 
+ */
+.specialist-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.specialist-row--left {
+  justify-content: flex-start;
+}
+
+.specialist-row--right {
+  justify-content: flex-end;
+}
+
+.specialist-card {
+  width: min(72%, 725px);
+  height: auto;
+}
+
+.specialist-sticker {
+  width: min(41%, 395px);
+  height: auto;
+  flex-shrink: 0;
+  /* acima do card mesmo quando vem antes no HTML (disco da Cindy) */
+  position: relative;
+  z-index: 1;
+}
+
+.specialist-row--left .specialist-sticker {
+  margin-left: -10%;
+}
+
+.specialist-row--right .specialist-sticker {
+  margin-right: -10%;
+}
+
+.specialist-sticker:hover {
+  animation: sticker-wobble 0.9s ease-in-out;
+}
+
+/* a aranha pende do fio, então balança a partir do topo */
+.specialist-sticker[src*="icone-urso-lucy"] {
+  transform-origin: 50% 0;
+}
+
+@keyframes sticker-wobble {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-9deg); }
+  40%  { transform: rotate(7deg); }
+  60%  { transform: rotate(-4deg); }
+  80%  { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .specialist-sticker:hover {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .specialist-row,
+  .specialist-row--right {
+    justify-content: center;
+  }
+
+  .specialist-card {
+    width: 78%;
+  }
+
+  .specialist-sticker {
+    width: 22%;
+  }
+}
+
+/* ---------------------------------------------------------
+   Desenvolvedores — foto polaroid + bloco de bio colorido
+   --------------------------------------------------------- */
+.icon-sprite {
+  display: none;
+}
+
+.dev-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 44px;
+}
+
+.dev-row--photo-right {
+  flex-direction: row-reverse;
+}
+
+.dev-row--purple {
+  --dev-color: var(--purple);
+}
+.dev-row--blue {
+  --dev-color: var(--blue);
+}
+.dev-row--green {
+  --dev-color: var(--green);
+}
+.dev-row--pink {
+  --dev-color: var(--pink-dev);
+}
+
+.dev-photo {
+  width: min(27%, 300px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.dev-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.dev-bio {
+  margin: 0;
+  padding: 20px 26px;
+  background: var(--dev-color);
+  color: var(--white);
+  font-family: var(--font-navbar);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.dev-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 0;
+  font-family: var(--font-navbar);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--link);
+}
+
+.dev-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.dev-links a:hover {
+  text-decoration: none;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .dev-row,
+  .dev-row--photo-right {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .dev-photo {
+    width: 62%;
+    align-self: center;
+  }
+
+  .dev-bio {
+    font-size: 0.95rem;
+    padding: 16px 18px;
+  }
+}
+
+/* ---------------------------------------------------------
+   Processo / Sobre
+   --------------------------------------------------------- */
+.video-description {
+  margin-top: 18px;
+  background: var(--white);
+  border: 2px dashed var(--pink);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  color: var(--ink-soft);
+  font-style: italic;
+  max-width: 620px;
+}
+
+.sobre-card {
+  max-width: 720px;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.sobre-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------
+   Footer simples
+   --------------------------------------------------------- */
+.site-footer {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  padding: 20px 0 40px;
+}
+
+.site-footer a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: var(--pink-dark);
+}
