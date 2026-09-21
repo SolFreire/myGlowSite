@@ -937,6 +937,16 @@ button {
   margin-top: 64px;
 }
 
+/* nos títulos, a palavra "myGlow" vem na fonte da marca */
+.tag-myglow {
+  font-family: var(--font-navbar);
+  font-weight: 700;
+}
+
+.tag-myglow--pink {
+  color: var(--pink);
+}
+
 /* etiqueta de data presa na borda superior do card */
 .update-tag {
   position: absolute;
