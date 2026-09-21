@@ -390,12 +390,51 @@ button {
    --------------------------------------------------------- */
 .home-hero {
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
 }
 
 .character-edna {
   width: 30%;
   min-width: 190px;
   max-width: 330px;
+  flex-shrink: 0;
+}
+
+/* A moldura é o fundo; o vídeo é posicionado na área interna dela.
+   As porcentagens vêm da geometria do SVG (778x414, barra de título de 49px). */
+.video-window {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  align-self: center;
+  aspect-ratio: 778 / 414;
+  background: url("../assets/img/home/moldura-video-home.svg") no-repeat center / 100% 100%;
+}
+
+/* width/height em % em vez de insets: <video> é elemento substituído e,
+   com width:auto, assumiria a largura nativa do arquivo (1248px) */
+.video-window video {
+  position: absolute;
+  top: 11.84%;
+  left: 1.54%;
+  width: 96.13%;
+  height: 83.9%;
+  display: block;
+  background: #000;
+  object-fit: cover;
+}
+
+.video-window .placeholder {
+  position: absolute;
+  top: 11.84%;
+  right: 2.33%;
+  bottom: 4.26%;
+  left: 1.54%;
+  min-height: 0;
+  border: none;
+  background: rgba(43, 35, 32, 0.06);
 }
 
 /* o balão sobe um pouco e cobre o tronco da Edna, como no design */
@@ -551,8 +590,22 @@ button {
 }
 
 @media (max-width: 720px) {
+  .home-hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .character-edna {
     max-width: 220px;
+  }
+
+  .video-window {
+    width: 100%;
+  }
+
+  /* empilhado, o balão cobriria os controles do vídeo */
+  .speech-bubble {
+    margin-top: 16px;
   }
 
   .home-bottom {
